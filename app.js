@@ -11,6 +11,7 @@ const log4js = require('log4js');
 const index = require('./routes/index')
 const users = require('./routes/users')
 const page = require('./routes/page')
+const image = require('./routes/image')
 
 // error handler
 onerror(app)
@@ -44,5 +45,6 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(page.routes(), page.allowedMethods())
+app.use(image.routes(), image.allowedMethods())
 
 module.exports = app

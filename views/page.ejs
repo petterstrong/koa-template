@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container" style="padding: 20px 0;">
+    <div class="form-group">
+      <input type="text" name="keyword" class="form-control" placeholder="关键字">
+      <input class="btn btn-primary" onclick="window.onrequest()" type="button" value="点击搜索">
+      <img id="imager" alt="">
+    </div>
+  </div>
+</body>
+<script>
+  function onrequest () {
+    let keyword =  document.querySelector('input[name=keyword]').value
+    let source = 'baidu'
+    document.querySelector('#imager').src = `http://localhost:3000/image/?keyword=${keyword}&source=${source}`
+  }
+</script>
+
+</html>
